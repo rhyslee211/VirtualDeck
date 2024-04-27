@@ -1,5 +1,8 @@
 # VirtualDeck
 
-## Bugs
+## To run clone the repository and run the following commands.
 
-Need to fix renderer and JS code for title bar buttons.
+```powershell
+npm install
+npm start
+```
