@@ -1,9 +1,5 @@
-const remote = require('electron');
+const ipc = require('electron').ipcRenderer;
 
-const win = remote.getCurrentWindow(); /* Note this is different to the
-html global `window` variable */
-
-// When document has loaded, initialise
 document.onreadystatechange = (event) => {
     if (document.readyState == "complete") {
         handleWindowControls();
@@ -20,31 +16,34 @@ window.onbeforeunload = (event) => {
 function handleWindowControls() {
     // Make minimise/maximise/restore/close buttons work when they are clicked
     document.getElementById('min-button').addEventListener("click", event => {
-        win.minimize();
+        ipc.send('minimize');
     });
 
     document.getElementById('max-button').addEventListener("click", event => {
-        win.maximize();
+        ipc.send('maximize');
     });
 
     document.getElementById('restore-button').addEventListener("click", event => {
-        win.unmaximize();
+        ipc.send('resize');
     });
 
     document.getElementById('close-button').addEventListener("click", event => {
-        win.close();
+        console.log('close button clicked');
+        ipc.send('close');
     });
 
     // Toggle maximise/restore buttons when maximisation/unmaximisation occurs
-    toggleMaxRestoreButtons();
-    win.on('maximize', toggleMaxRestoreButtons);
-    win.on('unmaximize', toggleMaxRestoreButtons);
+    //toggleMaxRestoreButtons();
+    ipc.on('isMaximized', ()=> { toggleMaxRestoreButtons(true) });
+    ipc.on('isRestored', ()=> { toggleMaxRestoreButtons(false) });
 
-    function toggleMaxRestoreButtons() {
-        if (win.isMaximized()) {
+    function toggleMaxRestoreButtons(isMaximized) {
+        if (isMaximized) {
             document.body.classList.add('maximized');
+            console.log('maximized');
         } else {
             document.body.classList.remove('maximized');
+            console.log('restored');
         }
     }
 }
