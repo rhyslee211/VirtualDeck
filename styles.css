@@ -23,11 +23,56 @@ body {
     width: calc(100% - 2px); /*Compensate for body 1px border*/
     background: #254053;
 }
+
+#sidebar {
+    position: fixed;
+    width: 60px;
+    height: 100%;
+    background: #1A2933;
+    border-right: 1px solid #48545c;
+    overflow-y: auto;
+    align-items: center;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Align items vertically */
+}
+
+#sidebar-content {
+    padding-top: 10px;
+    align-items: center;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Align items vertically */
+}
+
+#content {
+    position: absolute;
+    left: 60px;
+    width: calc(100% - 60px);
+    height: 100%;
+    background: #1A2933;
+    border-left: 1px solid #48545c;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+#content-header {
+    
+    margin-left: 10px;
+    border-bottom: #060c10;
+    height: 57px;
+}
+
+#macro-area {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    height: calc(100% - 77px);
+    background-color: #263a46;
+
+}
   
 #main {
     height: calc(100% - 32px);
     margin-top: 32px;
-    padding: 20px;
     overflow-y: auto;
 }
 
@@ -121,7 +166,8 @@ body {
     margin-left: 8px;
     overflow: hidden;
     font-family: "Segoe UI", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
+    color: rgba(255,255,255,0.4);
 }
   
 #window-title span {
@@ -146,4 +192,26 @@ body {
   
 .maximized #max-button {
     display: none;
+}
+
+.sidebar-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 46px;
+    color: rgba(59, 44, 123, 0.4);
+    transition: background 0.3s;
+    margin-bottom: 5px;
+}
+
+.sidebar-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: rgba(0, 0, 0, 1);
+    transition: background 0.3s;
+    border-radius: 50%;
 }

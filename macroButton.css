@@ -1,0 +1,20 @@
+.macroButton-container {
+    justify-content: left;
+    margin-top: 20px;
+}
+
+.macroButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background: #3cdee7;
+    border-radius: 10%;
+    font-size: 10px;
+    color: #1A2933;
+    transition: background 0.3s;
+
+    padding: 0; /* Remove default padding */
+    border: none; /* Remove default border */
+}

@@ -36,12 +36,28 @@
       </div>
     </header>
     <div id="main">
-      <h1>Hello World!</h1>
-      <p>Welcome to Virtual Deck</p>
+      <div id="sidebar">
+        <div id="sidebar-content">
+          <ul>
+            <li class="sidebar-item"><button class="sidebar-button" id = "add-macro-button">Add Macro</button></li>
+            <li class="sidebar-item"><button class="sidebar-button" id = "customize-button">Customize</button></li>
+            <li class="sidebar-item"><button class="sidebar-button" id = "settings-button">Settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <div id="content">
+        <div id="content-header">
+          Virtual Deck<br>Welcome to Virtual Deck
+        </div>
+        <div id="macro-area">
+          <macro-button>My Macro</macro-button>
+        </div>
+      </div>
     </div>
 
     <script>
       require('./renderer.js');
+      require('./macroButton.js');
     </script>
 
   </body>
