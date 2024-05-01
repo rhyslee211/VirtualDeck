@@ -6,6 +6,13 @@ document.onreadystatechange = (event) => {
     }
 };
 
+function handleKeyPress (event) {
+    // You can put code here to handle the keypress.
+    console.log(`You pressed ${event.key}`)
+  }
+  
+  window.addEventListener('keyup', handleKeyPress, true)
+
 window.onbeforeunload = (event) => {
     /* If window is reloaded, remove win event listeners
     (DOM element listeners get auto garbage collected but not

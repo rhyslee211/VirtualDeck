@@ -61,15 +61,6 @@ body {
     height: 57px;
 }
 
-#macro-area {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    height: calc(100% - 77px);
-    background-color: #263a46;
-
-}
-  
 #main {
     height: calc(100% - 32px);
     margin-top: 32px;
@@ -214,4 +205,26 @@ body {
     color: rgba(0, 0, 0, 1);
     transition: background 0.3s;
     border-radius: 50%;
+}
+
+#macro-area {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    height: calc(100% - 77px);
+    background-color: #263a46;
+
+}
+
+#macro-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.macro-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
 }
