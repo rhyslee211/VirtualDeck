@@ -1,5 +1,9 @@
 .macroButton-container {
     justify-content: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: move;
 }
 
 .macroButton {
