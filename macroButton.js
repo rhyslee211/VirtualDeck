@@ -49,7 +49,7 @@ class macroButton extends HTMLElement{
             let newPosY = event.clientY - this.offsetY;
         
             if (newPosX < 0) newPosX = 0;
-            if (newPosY < contentHeader.offsetHeight) newPosY = contentHeader.offsetHeight;
+            if (newPosY < 0) newPosY = 0;
             
             const containerWidth = this.container.offsetWidth;
             const containerHeight = this.container.offsetHeight;
@@ -57,8 +57,8 @@ class macroButton extends HTMLElement{
             if (newPosX + containerWidth > macroArea.offsetWidth) {
                 newPosX = macroArea.offsetWidth - containerWidth;
             }
-            if (newPosY + containerHeight > macroArea.offsetHeight + contentHeader.offsetHeight) {
-                newPosY = (macroArea.offsetHeight + contentHeader.offsetHeight) - containerHeight;
+            if (newPosY + containerHeight > macroArea.offsetHeight) {
+                newPosY = (macroArea.offsetHeight) - containerHeight;
             }
         
             // Set the new position

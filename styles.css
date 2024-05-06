@@ -210,6 +210,7 @@ body {
     padding: 20px;
     height: calc(100% - 77px);
     background-color: #263a46;
+    position: relative;
 
 }
 
