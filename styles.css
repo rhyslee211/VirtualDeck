@@ -8,8 +8,6 @@ body {
   background: #1A2933;
   color: #FFF;
 }
-h1 {margin: 0 0 10px 0; font-weight: 600; line-height: 1.2;}
-p {margin-top: 10px; color: rgba(255,255,255,0.4);}
 
 body {
     border: 1px solid #48545c;
@@ -51,7 +49,6 @@ body {
     background: #1A2933;
     border-left: 1px solid #48545c;
     overflow-y: auto;
-    margin-top: 10px;
 }
 
 #content-header {

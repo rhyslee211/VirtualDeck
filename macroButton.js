@@ -3,6 +3,8 @@ const macroButtonTemplate = document.createElement('template');
 
 const macroArea = document.getElementById('macro-area');
 
+const contentHeader = document.getElementById('content-header');
+
 macroButtonTemplate.innerHTML = `
 
     <link rel="stylesheet" href="macroButton.css">
@@ -47,7 +49,7 @@ class macroButton extends HTMLElement{
             let newPosY = event.clientY - this.offsetY;
         
             if (newPosX < 0) newPosX = 0;
-            if (newPosY < 0) newPosY = 0;
+            if (newPosY < contentHeader.offsetHeight) newPosY = contentHeader.offsetHeight;
             
             const containerWidth = this.container.offsetWidth;
             const containerHeight = this.container.offsetHeight;
@@ -55,13 +57,15 @@ class macroButton extends HTMLElement{
             if (newPosX + containerWidth > macroArea.offsetWidth) {
                 newPosX = macroArea.offsetWidth - containerWidth;
             }
-            if (newPosY + containerHeight > macroArea.offsetHeight) {
-                newPosY = macroArea.offsetHeight - containerHeight;
+            if (newPosY + containerHeight > macroArea.offsetHeight + contentHeader.offsetHeight) {
+                newPosY = (macroArea.offsetHeight + contentHeader.offsetHeight) - containerHeight;
             }
         
             // Set the new position
             this.container.style.left = newPosX + 'px';
             this.container.style.top = newPosY + 'px';
+
+            
         };
 
         
