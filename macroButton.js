@@ -10,7 +10,7 @@ macroButtonTemplate.innerHTML = `
     <link rel="stylesheet" href="macroButton.css">
 
     <div class="macroButton-container">
-        <button class="macroButton">Macro Button</button>
+        <button class="macroButton"></button>
     </div>
 
 `;
@@ -25,6 +25,11 @@ class macroButton extends HTMLElement{
         // Variables to store mouse position during dragging
         this.offsetX = 0;
         this.offsetY = 0;
+
+        this.macroName = "";
+        this.macroKeys = [];
+        this.macroText = "";
+        this.macroCommand = "";
 
         // Get the container element
         this.container = this.shadowRoot.querySelector('.macroButton-container');

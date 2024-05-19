@@ -14,10 +14,15 @@
     height: 80px;
     background: #3cdee7;
     border-radius: 10%;
-    font-size: 10px;
+    font-size: 16px;
     color: #1A2933;
     transition: background 0.3s;
 
     padding: 0; /* Remove default padding */
     border: none; /* Remove default border */
+}
+
+.macroButton:hover {
+    background: #21a0a7;
+    color: #1A2933;
 }

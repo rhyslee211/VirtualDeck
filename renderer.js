@@ -53,4 +53,5 @@ function handleWindowControls() {
             console.log('restored');
         }
     }
+
 }

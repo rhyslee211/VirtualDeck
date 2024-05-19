@@ -6,6 +6,7 @@
     
     <title>Hello World!</title>
     <link rel="stylesheet" href="styles.css">
+    <script src=".\node_modules\feather-icons\dist\feather.js"></script>
   </head>
   <body>
 
@@ -39,9 +40,9 @@
       <div id="sidebar">
         <div id="sidebar-content">
           <ul>
-            <li class="sidebar-item"><button class="sidebar-button" id = "add-macro-button">Add Macro</button></li>
-            <li class="sidebar-item"><button class="sidebar-button" id = "customize-button">Customize</button></li>
-            <li class="sidebar-item"><button class="sidebar-button" id = "settings-button">Settings</button></li>
+            <li class="sidebar-item"><button class="sidebar-button" id = "add-macro-button"><i data-feather="plus"></i></button></li>
+            <li class="sidebar-item"><button class="sidebar-button" id = "customize-button"><i data-feather="edit-2"></i></button></li>
+            <li class="sidebar-item"><button class="sidebar-button" id = "settings-button"><i data-feather="settings"></i></button></li>
           </ul>
         </div>
       </div>
@@ -51,9 +52,29 @@
         </div>
         <div id="macro-area">
           <ul id="macro-list"> 
-            <li class="macro-list-item"><macro-button>My Macro</macro-button></li>
+            <li class="macro-list-item"></li>
           </ul>
           
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-form" id="add-macro-form">
+      <div class="popup-form-content">
+        <div class="popup-form-header">
+          Create new macro
+        </div>
+        <div class="popup-form-body">
+          <ul>
+            <div>Macro Name<br><input type="text" id="macro-name" placeholder="Macro name"></div>
+            <div>Command<br><input type="text" id="macro-command" placeholder="Macro command"></div>
+            <div>Keybind<br><input type="text" id="macro-keys" placeholder="Ctrl + Shift + V"></div>
+            <div>Icon/Text<br><input type="text" id="macro-text" placeholder="Macro Text"></div>
+          </ul>
+        </div>
+        <div class="popup-form-footer">
+          <button id="add-macro-submit">Add</button>
+          <button id="add-macro-cancel">Cancel</button>
         </div>
       </div>
     </div>
@@ -61,6 +82,8 @@
     <script>
       require('./renderer.js');
       require('./macroButton.js');
+      require('./index.js');
+      feather.replace()
     </script>
 
   </body>
