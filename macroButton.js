@@ -44,6 +44,8 @@ class macroButton extends HTMLElement{
             document.addEventListener('mousemove', this.dragMouseMove);
             document.addEventListener('mouseup', this.dragMouseUp);
 
+            this.container.style.zIndex = 1000;
+
             console.log(macroArea.offsetWidth, macroArea.offsetHeight)
         };
 
@@ -80,6 +82,8 @@ class macroButton extends HTMLElement{
             // Remove the event listeners for mousemove and mouseup
             document.removeEventListener('mousemove', this.dragMouseMove);
             document.removeEventListener('mouseup', this.dragMouseUp);
+
+            this.container.style.zIndex = 0;
         };
 
         // Add event listener for mousedown event
