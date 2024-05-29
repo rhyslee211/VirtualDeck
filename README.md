@@ -8,6 +8,10 @@ Virtual Deck is a stream deck built into your computer. Instead of buying an ent
 * Switching OBS Scenes
 * Run python and other applications at the click of a button
 
+## Prerequisits
+
+[NodeJS](https://nodejs.org/en/download/package-manager)
+
 ## To run clone the repository and run the following commands.
 
 ```powershell
