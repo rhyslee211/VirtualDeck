@@ -19,7 +19,7 @@ npm install
 npm start
 ```
 
-## Ideas and Plans
+## Planned Features
 
 Window allows configuration and button activation.
 
