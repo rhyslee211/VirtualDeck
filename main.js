@@ -1,8 +1,14 @@
 const { app, BrowserWindow } = require('electron/main')
 const path = require('node:path')
 const ipc = require('electron').ipcMain
+const { fork } = require('child_process')
+
+let server;
 
 function createWindow () {
+
+  server = fork(path.join(__dirname, 'server.js'))
+
   const win = new BrowserWindow({
     width: 800,
     height: 600,
@@ -59,6 +65,7 @@ app.whenReady().then(() => {
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
-    app.quit()
+    app.quit();
+    server.kill();
   }
 })

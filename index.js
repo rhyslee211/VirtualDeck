@@ -1,3 +1,4 @@
+//const { ipcRenderer } = require('electron');
 
 document.getElementById('add-macro-button').addEventListener('click', () => {
 

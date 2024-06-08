@@ -31,6 +31,8 @@ class macroButton extends HTMLElement{
         this.macroText = "";
         this.macroCommand = "";
 
+        this.isDragging = false;
+
         // Get the container element
         this.container = this.shadowRoot.querySelector('.macroButton-container');
 
@@ -51,6 +53,8 @@ class macroButton extends HTMLElement{
 
         // Function to handle mouse move event
         this.dragMouseMove = (event) => {
+
+            this.isDragging = true;
             // Calculate the new position of the container
             let newPosX = event.clientX - this.offsetX;
             let newPosY = event.clientY - this.offsetY;
@@ -79,6 +83,19 @@ class macroButton extends HTMLElement{
 
         // Function to handle mouse up event
         this.dragMouseUp = () => {
+
+            if (this.isDragging) {
+                this.isDragging = false;
+                
+            }
+            else {
+                // If the button was not dragged, execute the command
+                console.log(this.macroCommand);
+
+                runCommand(this.macroCommand);
+
+            }
+
             // Remove the event listeners for mousemove and mouseup
             document.removeEventListener('mousemove', this.dragMouseMove);
             document.removeEventListener('mouseup', this.dragMouseUp);
@@ -88,6 +105,18 @@ class macroButton extends HTMLElement{
 
         // Add event listener for mousedown event
         this.container.addEventListener('mousedown', dragMouseDown);
+
+        function runCommand(command) {
+            console.log(command);
+            fetch('http://localhost:3000/mute-mic')
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
     }
 
     connectedCallback() {
