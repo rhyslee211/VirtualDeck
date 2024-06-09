@@ -25,6 +25,8 @@ class macroButton extends HTMLElement{
         // Variables to store mouse position during dragging
         this.offsetX = 0;
         this.offsetY = 0;
+        this.initialX = 0;
+        this.initialY = 0;
 
         this.macroName = "";
         this.macroKeys = [];
@@ -42,6 +44,9 @@ class macroButton extends HTMLElement{
             this.offsetX = event.clientX - this.container.offsetLeft;
             this.offsetY = event.clientY - this.container.offsetTop;
 
+            this.initialX = event.clientX;
+            this.initialY = event.clientY;
+
             // Register the mousemove and mouseup events
             document.addEventListener('mousemove', this.dragMouseMove);
             document.addEventListener('mouseup', this.dragMouseUp);
@@ -54,13 +59,20 @@ class macroButton extends HTMLElement{
         // Function to handle mouse move event
         this.dragMouseMove = (event) => {
 
+            
             this.isDragging = true;
+            console.log("dragging");
             // Calculate the new position of the container
             let newPosX = event.clientX - this.offsetX;
             let newPosY = event.clientY - this.offsetY;
         
             if (newPosX < 0) newPosX = 0;
             if (newPosY < 0) newPosY = 0;
+
+            if (Math.abs(newPosX - this.initialX) > 10 || Math.abs(newPosY - this.initialY) > 10) {
+                this.isDragging = true;
+                console.log("dragging");
+            }
             
             const containerWidth = this.container.offsetWidth;
             const containerHeight = this.container.offsetHeight;
@@ -109,7 +121,7 @@ class macroButton extends HTMLElement{
         function runCommand(command) {
             console.log(command);
             fetch('http://localhost:3000/mute-mic')
-                .then(response => response.text())
+                .then(response => response.text)
                 .then(data => {
                     console.log(data);
                 })
