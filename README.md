@@ -9,9 +9,9 @@ Virtual Deck is a stream deck built into your computer. Instead of buying an ent
 * Running python and other applications
 * Running advertisements
 
-## Prerequisits
+## Prerequisites
 
-[NodeJS](https://nodejs.org/en/download/package-manager)
+* [![Node][Node]][Node-url]
 
 ## To run clone the repository and run the following commands.
 
@@ -27,3 +27,7 @@ Window allows configuration and button activation.
 Small pop up window that allows button activation, and can be hidden with macro.
 
 Ability to control server/application from phone.
+
+
+[Node]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
+[Node-url]: https://nodejs.org/en
