@@ -9,13 +9,13 @@ Virtual Deck is a stream deck built into your computer. Instead of buying an ent
 * Running python and other applications
 * Running advertisements
 
-## Prerequisites
+## Built With
 
 * [![JavaScript][JavaScript]][JavaScript-url]
 * [![Node][Node]][Node-url]
 * [![Express][Express]][Express-url]
 
-## To run clone the repository and run the following commands.
+## To run install Node JS and clone the repository. Then run the following commands.
 
 ```powershell
 npm install
