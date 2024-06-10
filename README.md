@@ -11,7 +11,9 @@ Virtual Deck is a stream deck built into your computer. Instead of buying an ent
 
 ## Prerequisites
 
+* [![JavaScript][JavaScript]][JavaScript-url]
 * [![Node][Node]][Node-url]
+* [![Express][Express]][Express-url]
 
 ## To run clone the repository and run the following commands.
 
@@ -31,3 +33,7 @@ Ability to control server/application from phone.
 
 [Node]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
 [Node-url]: https://nodejs.org/en
+[Express]: https://img.shields.io/badge/Express.js-404D59?style=for-the-badge
+[Express-url]: https://expressjs.com/
+[JavaScript]: https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E
+[JavaScript-url]: https://www.javascript.com/
