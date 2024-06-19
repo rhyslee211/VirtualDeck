@@ -8,6 +8,8 @@ Virtual Deck is a stream deck built into your computer. Instead of buying an ent
 * Switching OBS Scenes
 * Running python and other applications
 * Initiating ad breaks
+* Starting and stopping streams/recordings
+* Adjusting audio levels
 
 ## Built With
 
