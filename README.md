@@ -10,6 +10,7 @@ Virtual Deck is a stream deck built into your computer. Instead of buying an ent
 * Initiating ad breaks
 * Starting and stopping streams/recordings
 * Adjusting audio levels
+* Adding stream markers
 
 ## Built With
 
