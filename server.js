@@ -27,9 +27,32 @@ app.get('/mute-mic', async (req, res) => {
   }
 });
 
+app.get('/unmute-mic', async (req, res) => {
+  try {
+    //const { inputName, inputMuted } = await obs.call('ToggleInputMute', { inputName: 'Mic/Aux' });
+    await obs.call('ToggleInputMute', {inputName: 'Audio Input Capture 2'});
+    console.log('Mic muted');
+    res.status(200).send('Mic muted');
+  } catch (error) {
+    res.status(500).send('Failed to mute/unmute microphone');
+    console.log(error);
+    //const sources = await obs.call('GetSourceList');
+    //console.log(sources.sources.filter(source => source.typeId === 'input' && source.type === 'wasapi_input_capture'));
+  }
+});
+
 app.get('/start-stream', async (req, res) => {
   try {
-    await obs.send('StartStreaming');
+    await obs.call('StartStream');
+    res.send('Stream started');
+  } catch (error) {
+    res.status(500).send('Failed to start stream');
+  }
+});
+
+app.get('/stop-stream', async (req, res) => {
+  try {
+    await obs.call('StopStream');
     res.send('Stream started');
   } catch (error) {
     res.status(500).send('Failed to start stream');
@@ -56,10 +79,10 @@ obs.connect(OBS_WEBSOCKET_ADDRESS, OBS_WEBSOCKET_PASSWORD)
       console.log('Scenes:', data);
     });
   });
-  
-  obs.on('SwitchScenes', data => {
-    console.log('SwitchScenes', data);
-  });
+
+obs.on('SwitchScenes', data => {
+  console.log('SwitchScenes', data);
+});
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

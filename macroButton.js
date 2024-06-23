@@ -72,6 +72,7 @@ class macroButton extends HTMLElement{
             if (Math.abs(newPosX - this.initialX) > 10 || Math.abs(newPosY - this.initialY) > 10) {
                 this.isDragging = true;
                 console.log("dragging");
+                console.log(Math.abs(newPosX - this.initialX), Math.abs(newPosY - this.initialY));
             }
             
             const containerWidth = this.container.offsetWidth;
@@ -120,7 +121,7 @@ class macroButton extends HTMLElement{
 
         function runCommand(command) {
             console.log(command);
-            fetch('http://localhost:3000/mute-mic')
+            fetch('http://localhost:3000/stop-stream')
                 .then(response => response.text)
                 .then(data => {
                     console.log(data);
