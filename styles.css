@@ -211,11 +211,10 @@ body {
 #macro-area {
     display: flex;
     justify-content: center;
-    padding: 20px;
     height: calc(100% - 77px);
     background-color: #263a46;
     position: relative;
-
+    overflow: hidden;
 }
 
 #macro-list {
@@ -242,16 +241,14 @@ body {
 }
 
 .popup-form {
-    display: none;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid #48545c;
     z-index: 9;
-    width: 300px;
-    background-color: #1A2933;
-    padding: 4px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #263a46;
+    position: relative;
+    overflow-y: auto;
+    display: none;
 }
 
 .popup-form-body input {

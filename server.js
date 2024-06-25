@@ -16,7 +16,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/mute-mic', async (req, res) => {
   try {
     //const { inputName, inputMuted } = await obs.call('ToggleInputMute', { inputName: 'Mic/Aux' });
-    await obs.call('ToggleInputMute', {inputName: 'Audio Input Capture 2', inputMuted: 'toggle'});
+
+    const inputName = req.params.inputName;
+
+    await obs.call('ToggleInputMute', {inputName: inputName, inputMuted: 'toggle'});
     console.log('Mic muted');
     res.status(200).send('Mic muted');
   } catch (error) {
@@ -30,7 +33,10 @@ app.get('/mute-mic', async (req, res) => {
 app.get('/unmute-mic', async (req, res) => {
   try {
     //const { inputName, inputMuted } = await obs.call('ToggleInputMute', { inputName: 'Mic/Aux' });
-    await obs.call('ToggleInputMute', {inputName: 'Audio Input Capture 2'});
+
+    const inputName = req.params.inputName;
+
+    await obs.call('ToggleInputMute', {inputName: inputName});
     console.log('Mic muted');
     res.status(200).send('Mic muted');
   } catch (error) {

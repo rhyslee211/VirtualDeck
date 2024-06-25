@@ -54,30 +54,30 @@
           <ul id="macro-list"> 
             <li class="macro-list-item"></li>
           </ul>
+          <div class="popup-form" id="add-macro-form">
+            <div class="popup-form-content">
+              <div class="popup-form-header">
+                Create new macro
+              </div>
+              <div class="popup-form-body">
+                <ul>
+                  <div>Macro Name<br><input type="text" id="macro-name" placeholder="Macro name"></div>
+                  <div>Command<br><input type="text" id="macro-command" placeholder="Macro command"></div>
+                  <div>Keybind<br><input type="text" id="macro-keys" placeholder="Ctrl + Shift + V"></div>
+                  <div>Icon/Text<br><input type="text" id="macro-text" placeholder="Macro Text"></div>
+                </ul>
+              </div>
+              <div class="popup-form-footer">
+                <button id="add-macro-submit">Add</button>
+                <button id="add-macro-cancel">Cancel</button>
+              </div>
+            </div>
+          </div>
           
         </div>
       </div>
     </div>
-
-    <div class="popup-form" id="add-macro-form">
-      <div class="popup-form-content">
-        <div class="popup-form-header">
-          Create new macro
-        </div>
-        <div class="popup-form-body">
-          <ul>
-            <div>Macro Name<br><input type="text" id="macro-name" placeholder="Macro name"></div>
-            <div>Command<br><input type="text" id="macro-command" placeholder="Macro command"></div>
-            <div>Keybind<br><input type="text" id="macro-keys" placeholder="Ctrl + Shift + V"></div>
-            <div>Icon/Text<br><input type="text" id="macro-text" placeholder="Macro Text"></div>
-          </ul>
-        </div>
-        <div class="popup-form-footer">
-          <button id="add-macro-submit">Add</button>
-          <button id="add-macro-cancel">Cancel</button>
-        </div>
-      </div>
-    </div>
+    
 
     <script>
       require('./renderer.js');
