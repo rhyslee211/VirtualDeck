@@ -60,6 +60,17 @@
                 Create new macro
               </div>
               <div class="popup-form-body">
+                <div>Command Type
+                  <select id="macro-command-type" class = "custom-select">
+                  <option value = ""></option>
+                  <option value="startStream">Start Stream</option>
+                  <option value="stopStream">Stop Stream</option>
+                  <option value="startRecording">Start Recording</option>
+                  <option value="stopRecording">Stop Recording</option>
+                  <option value="muteMic">Mute Mic</option>
+                  <option value="unmuteMic">Unmute Mic</option>
+                </div>
+                <br>
                 <ul>
                   <div>Macro Name<br><input type="text" id="macro-name" placeholder="Macro name"></div>
                   <div>Command<br><input type="text" id="macro-command" placeholder="Macro command"></div>

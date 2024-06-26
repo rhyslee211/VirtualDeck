@@ -230,6 +230,17 @@ body {
     list-style-type: none;
 }
 
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    height: 30px;
+    background-color: #345164;
+    color: #FFF;
+
+}
+
 .popup-form-header {
     display: flex;
     justify-content: center;
