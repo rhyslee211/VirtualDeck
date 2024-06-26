@@ -3,6 +3,7 @@
 document.getElementById('add-macro-button').addEventListener('click', () => {
 
     document.getElementById('add-macro-form').style.display = 'block';
+    
     document.addEventListener('keydown', onEnterKeyPress);
 
 });
@@ -23,13 +24,18 @@ document.getElementById('add-macro-submit').addEventListener('click', () => {
 
 document.getElementById('macro-command-type-select').addEventListener('change', function() {
 
-    const selectedOption = document.getElementById('macro-command-type-select').options[selectElement.selectedIndex].text;
+    const selectedOption = document.getElementById('macro-command-type-select').options[document.getElementById('macro-command-type-select').selectedIndex].value;
 
     console.log(selectedOption);
 
     if(selectedOption === 'startStream') {
-        document.getElementById('startStream-template').remove('hidden-template');
-        document.getElementById('startStream-template').remove('add-template');
+        document.getElementById('startStream-template').classList.remove('hidden');
+        document.getElementById('startStream-template').classList.add('visible');
+    }
+
+
+    if(selectedOption != "") {
+        document.getElementById('popup-form-footer').style.display = 'flex';
     }
 });
 

@@ -276,7 +276,7 @@ body {
 }
 
 .popup-form-footer {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     height: 40px;
@@ -304,9 +304,9 @@ body {
 }
 
 
-.hidden-template {
-    display: none;
+.hidden {
+    display: none !important;
 }
-.visible-template {
+.visible-block {
     display: block; 
 }
