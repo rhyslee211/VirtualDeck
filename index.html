@@ -61,7 +61,7 @@
               </div>
               <div class="popup-form-body">
                 <div>Command Type
-                  <select id="macro-command-type" class = "custom-select">
+                  <select id="macro-command-type-select" class = "custom-select">
                   <option value = ""></option>
                   <option value="startStream">Start Stream</option>
                   <option value="stopStream">Stop Stream</option>
@@ -71,12 +71,14 @@
                   <option value="unmuteMic">Unmute Mic</option>
                 </div>
                 <br>
-                <ul>
-                  <div>Macro Name<br><input type="text" id="macro-name" placeholder="Macro name"></div>
-                  <div>Command<br><input type="text" id="macro-command" placeholder="Macro command"></div>
-                  <div>Keybind<br><input type="text" id="macro-keys" placeholder="Ctrl + Shift + V"></div>
-                  <div>Icon/Text<br><input type="text" id="macro-text" placeholder="Macro Text"></div>
-                </ul>
+                <div id = "startStream-template" class = "hidden-template">
+                  <ul>
+                    <div>Macro Name<br><input type="text" id="macro-name" placeholder="Macro name"></div>
+                    <div>Command<br><input type="text" id="macro-command" placeholder="Macro command"></div>
+                    <div>Keybind<br><input type="text" id="macro-keys" placeholder="Ctrl + Shift + V"></div>
+                    <div>Icon/Text<br><input type="text" id="macro-text" placeholder="Macro Text"></div>
+                  </ul>
+                </div>
               </div>
               <div class="popup-form-footer">
                 <button id="add-macro-submit">Add</button>

@@ -21,6 +21,18 @@ document.getElementById('add-macro-submit').addEventListener('click', () => {
 
 });
 
+document.getElementById('macro-command-type-select').addEventListener('change', function() {
+
+    const selectedOption = document.getElementById('macro-command-type-select').options[selectElement.selectedIndex].text;
+
+    console.log(selectedOption);
+
+    if(selectedOption === 'startStream') {
+        document.getElementById('startStream-template').remove('hidden-template');
+        document.getElementById('startStream-template').remove('add-template');
+    }
+});
+
 function onEnterKeyPress(event) {
     // Check if the "Enter" key was pressed
     if (event.key === 'Enter') {

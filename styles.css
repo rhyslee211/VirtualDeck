@@ -302,3 +302,11 @@ body {
 .macroButton:hover {
     background: #2A3F4D;
 }
+
+
+.hidden-template {
+    display: none;
+}
+.visible-template {
+    display: block; 
+}
