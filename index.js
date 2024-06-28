@@ -43,6 +43,18 @@ document.getElementById('macro-command-type-select').addEventListener('change', 
         document.getElementById('startStream-template').classList.remove('hidden');
         document.getElementById('startStream-template').classList.add('visible');
     }
+    if(selectedOption === 'stopStream') {
+        document.getElementById('stopStream-template').classList.remove('hidden');
+        document.getElementById('stopStream-template').classList.add('visible');
+    }
+    if(selectedOption === 'muteMic') {
+        document.getElementById('muteMic-template').classList.remove('hidden');
+        document.getElementById('muteMic-template').classList.add('visible');
+    }
+    if(selectedOption === 'unmuteMic') {
+        document.getElementById('unmuteMic-template').classList.remove('hidden');
+        document.getElementById('unmuteMic-template').classList.add('visible');
+    }
 
 
     if(selectedOption != "") {
