@@ -28,6 +28,13 @@ document.getElementById('macro-command-type-select').addEventListener('change', 
 
     console.log(selectedOption);
 
+    var templates = document.getElementsByClassName('macro-command-type-template')
+    
+    Array.prototype.forEach.call(templates, element => {
+        element.classList.remove('visible');
+        element.classList.add('hidden');
+    });
+
     if(selectedOption === 'startStream') {
         document.getElementById('startStream-template').classList.remove('hidden');
         document.getElementById('startStream-template').classList.add('visible');
