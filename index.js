@@ -47,6 +47,14 @@ document.getElementById('macro-command-type-select').addEventListener('change', 
         document.getElementById('stopStream-template').classList.remove('hidden');
         document.getElementById('stopStream-template').classList.add('visible');
     }
+    if(selectedOption === 'startRecording') {
+        document.getElementById('startRecording-template').classList.remove('hidden');
+        document.getElementById('startRecording-template').classList.add('visible');
+    }
+    if(selectedOption === 'stopRecording') {
+        document.getElementById('stopRecording-template').classList.remove('hidden');
+        document.getElementById('stopRecording-template').classList.add('visible');
+    }
     if(selectedOption === 'muteMic') {
         document.getElementById('muteMic-template').classList.remove('hidden');
         document.getElementById('muteMic-template').classList.add('visible');
@@ -56,11 +64,6 @@ document.getElementById('macro-command-type-select').addEventListener('change', 
         document.getElementById('unmuteMic-template').classList.add('visible');
     }
 
-
-    if(selectedOption != "") {
-        document.getElementById('popup-form-footer').classList.remove('hidden');
-        document.getElementById('popup-form-footer').classList.add('visible-flex');
-    }
 });
 
 function onEnterKeyPress(event) {
