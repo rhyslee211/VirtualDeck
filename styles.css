@@ -307,6 +307,11 @@ body {
 .hidden {
     display: none !important;
 }
-.visible-block {
+
+.visible-flex {
+    display: flex;
+}
+
+.visible {
     display: block; 
 }

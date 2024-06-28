@@ -28,11 +28,15 @@ document.getElementById('macro-command-type-select').addEventListener('change', 
 
     console.log(selectedOption);
 
-    var templates = document.getElementsByClassName('macro-command-type-template')
+    let templates = document.getElementsByClassName("macro-command-type-template")
+
+    console.log(templates);
     
     Array.prototype.forEach.call(templates, element => {
+        console.log(element.classList);
         element.classList.remove('visible');
         element.classList.add('hidden');
+        console.log(element.classList);
     });
 
     if(selectedOption === 'startStream') {
@@ -42,7 +46,8 @@ document.getElementById('macro-command-type-select').addEventListener('change', 
 
 
     if(selectedOption != "") {
-        document.getElementById('popup-form-footer').style.display = 'flex';
+        document.getElementById('popup-form-footer').classList.remove('hidden');
+        document.getElementById('popup-form-footer').classList.add('visible-flex');
     }
 });
 
