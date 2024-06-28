@@ -39,29 +39,31 @@ document.getElementById('macro-command-type-select').addEventListener('change', 
         console.log(element.classList);
     });
 
-    if(selectedOption === 'startStream') {
-        document.getElementById('startStream-template').classList.remove('hidden');
-        document.getElementById('startStream-template').classList.add('visible');
+    if(selectedOption !== "") {
+        document.getElementById('macro-form-template').classList.remove('hidden');
+        document.getElementById('macro-form-template').classList.add('visible');
     }
-    if(selectedOption === 'stopStream') {
-        document.getElementById('stopStream-template').classList.remove('hidden');
-        document.getElementById('stopStream-template').classList.add('visible');
+
+    if(selectedOption === 'muteMic' || selectedOption === 'unmuteMic') {
+        let micInputs = document.getElementsByClassName("mic-input");
+
+        Array.prototype.forEach.call(micInputs, element => {
+            console.log(element.classList);
+            element.classList.remove('hidden');
+            element.classList.add('visible');
+            console.log(element.classList);
+        });
     }
-    if(selectedOption === 'startRecording') {
-        document.getElementById('startRecording-template').classList.remove('hidden');
-        document.getElementById('startRecording-template').classList.add('visible');
-    }
-    if(selectedOption === 'stopRecording') {
-        document.getElementById('stopRecording-template').classList.remove('hidden');
-        document.getElementById('stopRecording-template').classList.add('visible');
-    }
-    if(selectedOption === 'muteMic') {
-        document.getElementById('muteMic-template').classList.remove('hidden');
-        document.getElementById('muteMic-template').classList.add('visible');
-    }
-    if(selectedOption === 'unmuteMic') {
-        document.getElementById('unmuteMic-template').classList.remove('hidden');
-        document.getElementById('unmuteMic-template').classList.add('visible');
+    else {
+        let micInputs = document.getElementsByClassName("mic-input");
+
+        Array.prototype.forEach.call(micInputs, element => {
+            console.log(element.classList);
+            element.classList.remove('visible');
+            element.classList.add('hidden');
+            console.log(element.classList);
+        });
+    
     }
 
 });
