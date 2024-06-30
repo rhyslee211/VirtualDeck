@@ -121,7 +121,7 @@ class macroButton extends HTMLElement{
 
         function runCommand(command) {
             console.log(command);
-            fetch('http://localhost:3000/stop-stream')
+            fetch(command)
                 .then(response => response.text)
                 .then(data => {
                     console.log(data);

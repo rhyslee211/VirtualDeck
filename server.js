@@ -50,7 +50,7 @@ app.get('/unmute-mic', async (req, res) => {
 app.get('/start-stream', async (req, res) => {
   try {
     await obs.call('StartStream');
-    res.send('Stream started');
+    res.status(200).send('Stream started');
   } catch (error) {
     res.status(500).send('Failed to start stream');
   }
@@ -59,9 +59,27 @@ app.get('/start-stream', async (req, res) => {
 app.get('/stop-stream', async (req, res) => {
   try {
     await obs.call('StopStream');
-    res.send('Stream started');
+    res.status(200).send('Stream stopped');
   } catch (error) {
-    res.status(500).send('Failed to start stream');
+    res.status(500).send('Failed to stop stream');
+  }
+});
+
+app.get('/start-recording', async (req, res) => {
+  try {
+    await obs.call('StartRecord');
+    res.status(200).send('recording started');
+  } catch (error) {
+    res.status(500).send('Failed to start recording');
+  }
+});
+
+app.get('/stop-recording', async (req, res) => {
+  try {
+    await obs.call('StopRecord');
+    res.status(200).send('Recording stopped');
+  } catch (error) {
+    res.status(500).send('Failed to stop recording');
   }
 });
 

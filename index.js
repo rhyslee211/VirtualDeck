@@ -1,5 +1,14 @@
 //const { ipcRenderer } = require('electron');
 
+const macroCommandDict = {
+    'muteMic': 'mute-mic',
+    'unmuteMic': 'unmute-mic',
+    'startStream': 'start-stream',
+    'stopStream': 'stop-stream',
+    'startRecording': 'start-recording',
+    'stopRecording': 'stop-recording'
+}
+
 document.getElementById('add-macro-button').addEventListener('click', () => {
 
     clearPopup();
@@ -107,7 +116,7 @@ function submitForm(){
     macro.macroName = macroName;
     macro.macroKeys = macroKeys;
     macro.macroText = macroText;
-    macro.macroCommand = macroCommand;
+    macro.macroCommand = "http://localhost:3000/" + macroCommandDict[macroCommand];
 
     console.log(macro);
 
