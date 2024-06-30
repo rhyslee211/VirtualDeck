@@ -116,7 +116,15 @@ function submitForm(){
     macro.macroName = macroName;
     macro.macroKeys = macroKeys;
     macro.macroText = macroText;
-    macro.macroCommand = "http://localhost:3000/" + macroCommandDict[macroCommand];
+
+    let macroParams = "";
+
+    if(macroCommand === 'muteMic' || macroCommand === 'unmuteMic') {
+        let micInput = document.getElementById('inputMic-text').value;
+        macroParams = "?inputName=" + micInput;
+    }
+
+    macro.macroCommand = "http://localhost:3000/" + macroCommandDict[macroCommand] + macroParams;
 
     console.log(macro);
 

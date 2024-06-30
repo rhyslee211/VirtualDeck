@@ -17,13 +17,15 @@ app.get('/mute-mic', async (req, res) => {
   try {
     //const { inputName, inputMuted } = await obs.call('ToggleInputMute', { inputName: 'Mic/Aux' });
 
-    const inputName = req.params.inputName;
+    const inputName = req.query.inputName;
+
+    console.log(inputName)
 
     await obs.call('ToggleInputMute', {inputName: inputName, inputMuted: 'toggle'});
     console.log('Mic muted');
     res.status(200).send('Mic muted');
   } catch (error) {
-    res.status(500).send('Failed to mute/unmute microphone');
+    res.status(500).send('Failed to mute microphone');
     console.log(error);
     //const sources = await obs.call('GetSourceList');
     //console.log(sources.sources.filter(source => source.typeId === 'input' && source.type === 'wasapi_input_capture'));
@@ -34,13 +36,15 @@ app.get('/unmute-mic', async (req, res) => {
   try {
     //const { inputName, inputMuted } = await obs.call('ToggleInputMute', { inputName: 'Mic/Aux' });
 
-    const inputName = req.params.inputName;
+    const inputName = req.query.inputName;
+
+    console.log(inputName)
 
     await obs.call('ToggleInputMute', {inputName: inputName});
     console.log('Mic muted');
-    res.status(200).send('Mic muted');
+    res.status(200).send('Mic unmuted');
   } catch (error) {
-    res.status(500).send('Failed to mute/unmute microphone');
+    res.status(500).send('Failed to unmute microphone');
     console.log(error);
     //const sources = await obs.call('GetSourceList');
     //console.log(sources.sources.filter(source => source.typeId === 'input' && source.type === 'wasapi_input_capture'));
