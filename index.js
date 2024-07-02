@@ -1,4 +1,7 @@
-//const { ipcRenderer } = require('electron');
+const ipc = require('electron').ipcRenderer;
+
+let serverUrl = "http://localhost:3000/";
+
 
 const macroCommandDict = {
     'muteMic': 'mute-mic',
@@ -124,7 +127,9 @@ function submitForm(){
         macroParams = "?inputName=" + micInput;
     }
 
-    macro.macroCommand = "http://localhost:3000/" + macroCommandDict[macroCommand] + macroParams;
+    console.log(serverUrl);
+
+    macro.macroCommand = serverUrl + macroCommandDict[macroCommand] + macroParams;
 
     console.log(macro);
 

@@ -1,3 +1,6 @@
+const { contextBridge, ipcRenderer } = require('electron');
+const { request } = require('express');
+
 window.addEventListener('DOMContentLoaded', () => {
     const replaceText = (selector, text) => {
       const element = document.getElementById(selector)

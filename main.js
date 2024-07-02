@@ -55,6 +55,10 @@ function createWindow () {
   })
 }
 
+ipc.on('request-server-info', (event) => {
+  event.server.send('server-info', server)
+})
+
 app.whenReady().then(() => {
   createWindow()
 

@@ -16,6 +16,7 @@
     "custom-electron-titlebar": "^4.2.8",
     "express": "^4.19.2",
     "feather-icons": "^4.29.2",
-    "obs-websocket-js": "^5.0.5"
+    "obs-websocket-js": "^5.0.5",
+    "ws": "^8.17.1"
   }
 }
