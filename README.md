@@ -1,4 +1,6 @@
-# VirtualDeck
+# VirtualDeck [Deprecated]
+
+Now being made in React as [Virtual-Deck](https://github.com/rhyslee211/virtual-deck)
 
 ## What is Virtual Deck
 
